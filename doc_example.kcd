@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<NetworkDefinition xmlns="http://kayak.2codeornot2code.org/1.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="Definition.xsd">
+  <Document/>
+  <Bus name="Motor">
+    <Message id="0x007" length="8" name="Airbag">
+      <Signal name="DriverAirbagFired" offset="56"/>
+      <Signal name="CodriverAirbagFired" offset="0"  length="16" endianess="little"/>
+      <Signal name="DriverSeatOccupied" offset="24" length="16" />
+      <Signal name="DriverSeatbeltLocked" offset="59" length="4" endianess="big">
+        <Value type="signed"/>
+      </Signal>
+      <Producer>
+        <NodeRef id="1"/>
+      </Producer>
+    </Message>
+  </Bus>
+</NetworkDefinition>
